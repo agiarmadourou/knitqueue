@@ -1,5 +1,7 @@
 package com.knitqueue.knitqueue.service;
 
+import com.knitqueue.knitqueue.entity.AppUser;
+import com.knitqueue.knitqueue.entity.Project;
 import com.knitqueue.knitqueue.entity.ShoppingItem;
 
 import java.util.List;
