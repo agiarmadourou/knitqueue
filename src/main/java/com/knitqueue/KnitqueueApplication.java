@@ -1,17 +1,12 @@
-package com.knitqueue.knitqueue;
+package com.knitqueue;
 
-import com.knitqueue.knitqueue.entity.AppUser;
-import com.knitqueue.knitqueue.entity.Project;
-import com.knitqueue.knitqueue.entity.ShoppingItem;
-import com.knitqueue.knitqueue.repository.AppUserRepository;
-import com.knitqueue.knitqueue.repository.ProjectRepository;
-import com.knitqueue.knitqueue.repository.ShoppingItemRepository;
+import com.knitqueue.repository.AppUserRepository;
+import com.knitqueue.repository.ProjectRepository;
+import com.knitqueue.repository.ShoppingItemRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
-import java.util.List;
 
 
 @SpringBootApplication

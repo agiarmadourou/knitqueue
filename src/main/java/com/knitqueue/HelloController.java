@@ -1,4 +1,4 @@
-package com.knitqueue.knitqueue;
+package com.knitqueue;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

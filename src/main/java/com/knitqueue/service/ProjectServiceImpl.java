@@ -1,7 +1,7 @@
-package com.knitqueue.knitqueue.service;
+package com.knitqueue.service;
 
-import com.knitqueue.knitqueue.entity.Project;
-import com.knitqueue.knitqueue.repository.ProjectRepository;
+import com.knitqueue.entity.Project;
+import com.knitqueue.repository.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

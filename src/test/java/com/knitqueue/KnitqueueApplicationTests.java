@@ -1,4 +1,4 @@
-package com.knitqueue.knitqueue;
+package com.knitqueue;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

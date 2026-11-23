@@ -1,6 +1,6 @@
-package com.knitqueue.knitqueue.service;
+package com.knitqueue.service;
 
-import com.knitqueue.knitqueue.entity.AppUser;
+import com.knitqueue.entity.AppUser;
 
 public interface AppUserService {
     AppUser save(AppUser theAppUser);

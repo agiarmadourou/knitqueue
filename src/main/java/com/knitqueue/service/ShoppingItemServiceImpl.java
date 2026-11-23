@@ -1,10 +1,9 @@
-package com.knitqueue.knitqueue.service;
+package com.knitqueue.service;
 
-import com.knitqueue.knitqueue.entity.AppUser;
-import com.knitqueue.knitqueue.entity.Project;
-import com.knitqueue.knitqueue.entity.ShoppingItem;
-import com.knitqueue.knitqueue.repository.ProjectRepository;
-import com.knitqueue.knitqueue.repository.ShoppingItemRepository;
+import com.knitqueue.entity.Project;
+import com.knitqueue.entity.ShoppingItem;
+import com.knitqueue.repository.ProjectRepository;
+import com.knitqueue.repository.ShoppingItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

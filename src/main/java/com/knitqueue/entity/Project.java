@@ -1,4 +1,4 @@
-package com.knitqueue.knitqueue.entity;
+package com.knitqueue.entity;
 
 import jakarta.persistence.*;
 

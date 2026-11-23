@@ -1,6 +1,6 @@
-package com.knitqueue.knitqueue.repository;
+package com.knitqueue.repository;
 
-import com.knitqueue.knitqueue.entity.AppUser;
+import com.knitqueue.entity.AppUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AppUserRepository extends JpaRepository<AppUser, Integer> {
