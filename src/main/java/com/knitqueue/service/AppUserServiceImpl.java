@@ -5,24 +5,33 @@ import com.knitqueue.repository.AppUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.NoSuchElementException;
+
 @Service
 public class AppUserServiceImpl implements AppUserService{
-    private final AppUserRepository appUserRepository;
+  private final AppUserRepository appUserRepository;
 
-    @Autowired
-    public AppUserServiceImpl(AppUserRepository theAppUserRepository) {
-        appUserRepository = theAppUserRepository;
-    }
+  @Autowired
+  public AppUserServiceImpl(AppUserRepository theAppUserRepository) {
+    appUserRepository = theAppUserRepository;
+  }
 
-    @Override
-    public AppUser save(AppUser theAppUser) {
-        return appUserRepository.save(theAppUser);
-    }
+  @Override
+  public AppUser save(AppUser theAppUser) {
+    return appUserRepository.save(theAppUser);
+  }
 
-    @Override
-    public AppUser findById(int theId) {
-        return appUserRepository.findById(theId).
-                orElseThrow(()->
-                        new RuntimeException("User with id " + theId + " not found."));
-    }
+  @Override
+  public AppUser findById(int theId) {
+    return appUserRepository.findById(theId).
+            orElseThrow(()->
+                    new RuntimeException("User with id " + theId + " not found."));
+  }
+
+  @Override
+  public AppUser findByEmail(String email) {
+    return appUserRepository
+        .findByEmail(email)
+        .orElseThrow(() -> new NoSuchElementException("User not found."));
+  }
 }

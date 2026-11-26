@@ -3,10 +3,7 @@ package com.knitqueue.controller;
 import com.knitqueue.dto.ProjectResponse;
 import com.knitqueue.entity.Project;
 import com.knitqueue.service.ProjectService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
@@ -15,6 +12,12 @@ public class ProjectController {
 
     public ProjectController(ProjectService projectService) {
         this.projectService = projectService;
+    }
+
+    @PostMapping("/projects")
+    public Project addProject(@RequestBody Project project) {
+        Project theProject = projectService.save(project);
+        return theProject;
     }
 
     @GetMapping("/projects/{projectId}")
