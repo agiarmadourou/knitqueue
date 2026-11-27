@@ -8,6 +8,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.NoSuchElementException;
+
+/** Integrates user model with Spring Security */
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
     private final AppUserService appUserService;
@@ -20,11 +23,15 @@ public class CustomUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         AppUser appUser;
 
+        // Email is used as the authentication identifier
         try {
         appUser = appUserService.findByEmail(username);
-        } catch (UsernameNotFoundException e) {
+        } catch (NoSuchElementException e) {
             throw new UsernameNotFoundException("User not found", e);
         }
+
+        // Map appUser to Spring Security UserDetails
+        // Password verification is handled by PasswordEncoder
         return User.withUsername(appUser.getEmail())
                 .password(appUser.getPasswordHash())
                 .roles("USER")

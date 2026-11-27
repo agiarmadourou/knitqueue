@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 
@@ -98,5 +99,12 @@ public class ProjectServiceImpl implements ProjectService {
   public List<Project> searchUserProjects(int userId, String partialName) {
     return projectRepository.
             findByAppUser_UserIdAndProjectNameContainingIgnoreCase(userId,partialName);
+  }
+
+  @Override
+  public Project retrieveUserProject(int projectId, int userId) {
+    return projectRepository
+            .findByProjectIdAndAppUser_UserId(projectId,userId)
+            .orElseThrow(() -> new NoSuchElementException("Project not found."));
   }
 }

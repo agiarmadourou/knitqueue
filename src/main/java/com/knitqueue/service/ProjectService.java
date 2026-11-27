@@ -23,4 +23,6 @@ public interface ProjectService {
     List<Project>  retrieveUserProjectsByState(int userId,String state);
 
     List<Project>  searchUserProjects(int userId,String partialName);
+
+    Project retrieveUserProject(int projectId, int userId);
 }
